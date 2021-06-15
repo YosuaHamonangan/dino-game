@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\img",
+    "\\src\\scripts",
+    "\\src\\scripts\\objects",
+    "\\src\\scripts\\scenes",
+    "\\typings",
+    "\\webpack"
+  ],
+  "SelectedNode": "\\src\\scripts\\scenes\\preloadScene.ts",
+  "PreviewInSolutionExplorer": false
+}
