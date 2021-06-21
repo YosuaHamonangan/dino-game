@@ -1,11 +1,12 @@
 import 'phaser'
 import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
+import { GRAVITY } from './constants'
 
-const DEFAULT_WIDTH = 1280;
-const DEFAULT_HEIGHT = 720;
+const DEFAULT_WIDTH = 1280
+const DEFAULT_HEIGHT = 720
 
-const config = {
+const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
 	backgroundColor: '#ffffff',
 	scale: {
@@ -19,8 +20,8 @@ const config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
-			debug: true,
-			gravity: { y: 6000 },
+			// debug: true,
+			gravity: { y: GRAVITY }
 		}
 	}
 }

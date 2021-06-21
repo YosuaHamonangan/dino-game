@@ -1,16 +1,22 @@
+import MainScene from '../scenes/mainScene'
+
 export default class Obstacle extends Phaser.Physics.Arcade.Sprite {
-	constructor(scene, x, y) {
+	scene: MainScene
+	body: Phaser.Physics.Arcade.Body
+	constructor(scene: Phaser.Scene, x: number, y: number) {
 		super(scene, x, y, 'tree')
-		scene.physics.add.existing(this, false);
+		scene.physics.add.existing(this, false)
 
-		var body = this.body as Phaser.Physics.Arcade.Body;
-		body.setAllowGravity(false);
-		this.setPushable(false);
+		this.setBodySize(150, 280)
+		this.body.setAllowGravity(false)
+		this.setPushable(false)
 
-		this.setScale(0.4, 0.5);
+		this.setScale(0.4, 0.5)
 	}
 
-	init(x, y) {
-		this.enableBody(true, x, y, true, true);
+	preUpdate() {
+		if (this.x < -this.width) {
+			this.scene.removeObstacle(this)
+		}
 	}
 }
