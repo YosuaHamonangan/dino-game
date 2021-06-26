@@ -36,6 +36,12 @@ export default class MainScene extends Phaser.Scene {
 		spaceKey.on('down', this.onSpaceKeyDown.bind(this))
 		spaceKey.on('up', this.onSpaceKeyUp.bind(this))
 
+		const mouseArea = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height)
+		mouseArea.setOrigin(0, 0)
+		mouseArea.setInteractive()
+		mouseArea.on('pointerdown', this.onSpaceKeyDown.bind(this))
+		mouseArea.on('pointerup', this.onSpaceKeyUp.bind(this))
+
 		const groundsConfig: Phaser.Types.Physics.Arcade.PhysicsGroupConfig = {
 			classType: Ground
 		}
